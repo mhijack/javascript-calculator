@@ -1,0 +1,206 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom CSS */
+
+html,
+body {
+  font-family: Roboto;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  background-color: #E0E0E0;
+}
+
+.display,
+.buttons {
+  margin: auto;
+  width: 200px;
+}
+
+.display {
+  margin-top: 60px;
+  padding: 40px 5px 20px 0;
+  /* height: 65px; */
+  background-color: #3A4654;
+  color: #899BA2;
+  width: 195px;
+  text-align: right;
+}
+
+.buttons button {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-color: #3A4654;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 0.5px;
+  margin: 0;
+  border: 0.5px solid #899BA2;
+}
+
+.buttons button:focus {
+  outline: none;
+}
+
+.buttons button:hover {
+  opacity: 0.7;
+  color: black;
+}
+
+.buttons button:active {
+  opacity: 1;
+  color: white;
+}
+
+.buttons .function {
+  color: #A7B4BB;
+}
+
+.buttons #equal {
+  width: 100px;
+  color: #899BA2;
+}
+
+.buttons #reset {
+  color: #EF5350;
+}
+
+.buttons #percent {
+  color: #899BA2;
+}
