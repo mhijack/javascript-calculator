@@ -1,5 +1,6 @@
 "use strict";
 // ========================= TODO =========================
+// display operation history
 
 // ========================= initializing variables =========================
 const resetButton = getEl('#reset');
@@ -17,6 +18,8 @@ let previous;
 let operant;
 // determining whether to reprint viewer or append number input to existing value of viewer
 let rePrint = false;
+// if equal is pressed, don't recalculate; otherwise everytime operant pressed, update result of chained calculation
+let equalPressed = false;
 
 // get functions and numbers
 const funcs = getEl('.function');
@@ -48,6 +51,11 @@ positiveButton.addEventListener('click', togglePostive);
 // ========================= helper functions =========================
 // operations on curResult
 function operation(e) {
+  if (!equalPressed) {
+    // is equal is not pressed, every time operant is pressed, do calculation
+    calculate();
+  }
+  equalPressed = false;
   // when operant is pressed, save operant (only remembers the operant last pressed)
   operant = e.target.id;
   // record current number on screen to previous
@@ -88,6 +96,9 @@ function calculate() {
     previous = result.toString();
     viewer.textContent = result;
     rePrint = true;
+    if (!equalPressed) {
+      equalPressed = true;
+    }
     return;
   }
 }
@@ -110,14 +121,13 @@ function togglePostive() {
 
 // display result to viewer
 function updateDisplay(data) {
-  if (viewer.textContent.length >= 22) {
-    // if exceeds viewer digit limit, clear everything
+  if (viewer.textContent.length >= 21) {
+    // if exceeds viewer digit limit, reset state
     viewer.textContent = 'Digit Limit Met';
     return;
-    // TODO: if exceeds viewer digit limit, clear everything
   }
   if (viewer.textContent === '0') {
-    // if current number is 0, set the pressed number to as value (no leading zero in valid numbers)
+    // if current number is 0, set the pressed number to value (prevents leading zero)
     viewer.textContent = data;
     return;
   }
