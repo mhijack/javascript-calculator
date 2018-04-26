@@ -1,5 +1,6 @@
 "use strict";
 // ========================= TODO =========================
+// ! allow chain calculation
 // display operation history
 
 // ========================= initializing variables =========================
@@ -9,6 +10,7 @@ const viewer = getEl('.display')[0];
 const decimalButton = getEl('#dot');
 const percentageButton = getEl('#percent');
 const positiveButton = getEl('#positive');
+const historyDisplay = getEl('.history')[0];
 
 // holds value of current numeric input until an operant is clicked
 let current = viewer.textContent;
@@ -20,6 +22,9 @@ let operant;
 let rePrint = false;
 // if equal is pressed, don't recalculate; otherwise everytime operant pressed, update result of chained calculation
 let equalPressed = false;
+// keeps track of operation history
+let history = '';
+
 
 // get functions and numbers
 const funcs = getEl('.function');
