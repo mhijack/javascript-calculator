@@ -14,3 +14,9 @@
   * input decimal numbers
   * clear all current inputs and memory history
   * results will be shown immediately in the display window
+
+# TODO
+
+  1. Enable keyboard input
+  2. User can delete one digit by pressing delete
+  3. Fix pressing 1 will eliminate previous input
